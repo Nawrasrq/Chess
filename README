@@ -3,8 +3,7 @@
 A simple Chess program played inside the terminal using C++ and Object-Oriented Programming. 
 
 ## Project Structure
-
-```plaintext
+```
 ChessTerminalApp/
 ├── include/
 │   ├── Board.h              # Declaration of the Board class
@@ -25,3 +24,4 @@ ChessTerminalApp/
 │   └── Pawn.cpp             # Pawn class implementation
 ├── main.cpp                 # Entry point for the chess application
 └── README.md                # Project documentation
+```
