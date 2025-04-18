@@ -1,5 +1,6 @@
 #ifndef PIECE_H
 #define PIECE_H
+#include <memory>
 
 /** @brief Abstract base class for all chess pieces. */
 enum class Color { WHITE, BLACK };

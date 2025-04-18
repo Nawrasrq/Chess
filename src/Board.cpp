@@ -10,7 +10,10 @@
 #include <cmath>
 
 Board::Board() {
-    board.resize(8, std::vector<std::unique_ptr<Piece>>(8, nullptr));
+    board.resize(8);
+    for (auto &row : board) {
+        row.resize(8);
+    }
     setupBoard();
 }
 
@@ -90,11 +93,17 @@ void Board::setupBoard() {
 
 // Deep copy of the board by cloning each piece.
 std::vector<std::vector<std::unique_ptr<Piece>>> Board::cloneBoard() const {
-    std::vector<std::vector<std::unique_ptr<Piece>>> copy(8, std::vector<std::unique_ptr<Piece>>(8, nullptr));
+    std::vector<std::vector<std::unique_ptr<Piece>>> copy;
+    copy.resize(8);
+    for (auto &row : copy) {
+        row.resize(8);
+    }
+
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
-            if (board[i][j])
+            if (board[i][j]) {
                 copy[i][j] = board[i][j]->clone();
+            }
         }
     }
     return copy;
